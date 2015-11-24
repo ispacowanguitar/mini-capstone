@@ -1,0 +1,24 @@
+
+<div class="container"></div>
+  <p><a href="products/new">Create a new fruit</a></p>
+  <div class="row">
+  <% @fruit.each do |fruit| %>
+  <div class="col-md-4">
+    <div class="well">
+      <h1>Name:<a href="/products/<%= fruit.id %>"><%= fruit.name %></a></h1>
+      <h1>Price: <%= fruit.price %></h1>
+
+      <ul>
+      <% fruit.description_list.each do |thing| %>
+        <li><%= thing %></li>
+      <% end %>
+      </ul>
+
+      <img src="<%= fruit.image %>">
+      <p><a href="/products/<%= fruit.id %>/edit">Edit fruit</a></p>
+      <%= link_to "Delete this product", "/products/#{fruit.id}", method: :delete %>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>

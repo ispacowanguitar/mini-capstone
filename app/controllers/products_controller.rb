@@ -6,11 +6,6 @@ class ProductsController < ApplicationController
       @user = current_user
     end
 
-    unless current_user
-      redirect_to "/users/sign_in"
-      flash[:info] = "Sign in, and then you can view the fruit!"
-    end 
-
     @fruit = Product.all 
 
     sort_attribute = params[:sort_attribute]

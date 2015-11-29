@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  get '/bootstrap-form' => 'products#form'
+  
+  get '/' => 'products#index'
   get '/products' => 'products#index'
   
   get '/products/new' => 'products#new'
@@ -10,6 +15,11 @@ Rails.application.routes.draw do
 
   delete '/products/:id' => 'products#destroy'
 
+
+
+
+  post '/orders/create' => 'orders#create'
+  get '/orders/show/:id' => 'orders#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

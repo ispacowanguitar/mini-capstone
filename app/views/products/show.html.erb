@@ -1,8 +1,26 @@
-<h1>Name: <%= @product.name %></h1>
-<h2>Price: <%= @product.price %></h2>
-<img src="<%= @product.image %>">
-<h2>Description: <%= @product.description %></h2>
-      <h1><%= @product.sale_message %></h1>
-
+<h1>Name: <%= @fruit.name %></h1>
+<h2>Price: <%= @fruit.price %></h2>
+<% @fruit.images.each do |image| %>
+  <img src="<%= image.url if image.url %>">
+<% end %>
+<h3>Description: <%= @fruit.description %></h3>
+      <h3><%= @fruit.sale_message %></h3>
+      <h3>This fruit is sold by: <%= @fruit.supplier.name %></h3>
 
 <%= link_to "Back", "/products" %>
+
+
+<%= form_tag "/orders/create", method: :post do %>
+  <div class="form-group">
+  <%= label_tag :quantity %>
+  <%= text_field_tag "theamount", "", placeholder: "fruit amount", class: "form-control" %>
+  </div>
+  
+  <div>
+  <%= hidden_field_tag "product_id", @fruit.id %>
+  </div>  
+
+  <div>
+  <%= button_tag 'DO IT', class: "btn btn-default" %>
+  </div>
+<% end %>

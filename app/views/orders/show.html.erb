@@ -1,0 +1,16 @@
+<h1>
+  Order ID: <%= @order.id %>
+</h1>
+  <h1>
+  Order quantity: <%= @order.quantity %>
+</h1>
+<h1>
+  You ordered a <%= @product.name %>
+</h1>
+
+<img src=" <%= @product.images.first.url if @product.images.first %> ">
+
+<h1>The subtotal is: $<%= @order.subtotal %></h1>
+<h1>The tax is: $<%= @order.tax %></h1>
+<h1>The total is: $<%= @order.total %></h1>
+

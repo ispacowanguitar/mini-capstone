@@ -18,14 +18,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Fruit</a>
+      <a class="navbar-brand" href="/products">Fruit</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">YEA <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li class="active"><a href="/users/sign_in">Sign in <span class="sr-only">(current)</span></a></li>
+        <li><a href="/users/sign_up">Sign up</a></li>
+        <li><%= link_to "Sign out", "/users/sign_out", method: :delete %></li>
         <li><a href="/products?sort_attribute=price&sort_order=asc">Cheap ass fruit</li>
         <li><a href="/products?sort_attribute=price&sort_order=desc">Expensive ass fruit</li>
         <li class="dropdown">
@@ -52,9 +53,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="/users/sign_in">Sign in</a></li>
+            <li><a href="/users/sign_up">Sign up</a></li>
+            <li><%= link_to "Sign out", "/users/sign_out", method: :delete %></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
@@ -71,8 +72,9 @@
   </div>
 <% end %>
 
-
 <%= yield %>
+
+
 </div>
 </body>
 </html>

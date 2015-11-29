@@ -13,8 +13,8 @@
         <li><%= thing %></li>
       <% end %>
       </ul>
-
-      <img src="<%= fruit.image %>">
+    
+      <img src="<%= fruit.images.first.url if fruit.images.first %>">
       <p><a href="/products/<%= fruit.id %>/edit">Edit fruit</a></p>
       <%= link_to "Delete this product", "/products/#{fruit.id}", method: :delete %>
     </div>

@@ -32,11 +32,6 @@ class ProductsController < ApplicationController
 
   def show
 
-    unless current_user
-      redirect_to "/users/sign_in"
-      flash[:info] = "Nice try!!"
-    end 
-
   	products_id = params[:id]
   	@fruit = Product.find_by(id: products_id)
   end

@@ -28,12 +28,17 @@ class ProductsController < ApplicationController
     if sort_attribute && sort_order
       @fruit = Product.order(sort_attribute => sort_order)
     end
+
+    if params[:category]
+      @fruit = Category.find_by(name: params[:category]).products
+    end
   end
 
   def show
 
   	products_id = params[:id]
   	@fruit = Product.find_by(id: products_id)
+    
   end
 
   def new

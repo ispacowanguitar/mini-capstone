@@ -4,8 +4,10 @@
   <img src="<%= image.url if image.url %>">
 <% end %>
 <h3>Description: <%= @fruit.description %></h3>
-      <h3><%= @fruit.sale_message %></h3>
-      <h3>This fruit is sold by: <%= @fruit.supplier.name %></h3>
+<h3><%= @fruit.sale_message %></h3>
+<h3>This fruit is sold by: <%= @fruit.supplier.name %></h3>
+
+<h3>Categories <%= @fruit.categorie_list %></h3>
 
 <%= link_to "Back", "/products" %>
 
